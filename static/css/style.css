@@ -12,9 +12,9 @@
 
     --white-color: #fff;
 
-    --font-home:'Times New Roman', Times, serif;
-    --font-h: 'Raleway', sans-serif;
-    --font: 'Lato', sans-serif;
+    --font-times:'Times New Roman', Times, serif;
+    --font-raleway: 'Raleway', sans-serif;
+    --font-lato: 'Lato', sans-serif;
 }
 /*----------- Reset ------------*/
 html {
@@ -65,10 +65,25 @@ section {
 
 
 /*----------- Componentes ------------*/
+.btn{
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-family: var(--font-lato);
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 5%;
+    box-shadow: 1px 3px 10px 1px rgba(180, 180, 180, 0.75);
+    
+}
+.btn-transparente{
+    background-color: transparent;
+    border: 1px solid var(--gold-color);
+}
+
+
 
 /*----------- Utilities ------------*/
 
 /* aca crear la sombra */
 
-
+box-shadow: 1px 3px 10px 1px rgba(180, 180, 180, 0.75);
 
