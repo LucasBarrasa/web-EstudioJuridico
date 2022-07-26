@@ -1,0 +1,100 @@
+/*----------- Custom Properties ------------*/
+:root {
+    --gold-color: #EFB810;
+    
+    --gold-oscuro-color: #DDA90D;
+    --gold-claro-color: #F8D653;
+
+    --dark-color: #202124;
+    --dark-color-75: #3f4042;
+    --dark-color-50: #5d5d5f;
+    --darl-color-25: #949494;
+
+    --white-color: #fff;
+
+    --font-times:'Times New Roman', Times, serif;
+    --font-raleway: 'Raleway', sans-serif;
+    --font-lato: 'Lato', sans-serif;
+}
+/*----------- Reset ------------*/
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: var(--font);
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+a {
+    color:var(--gold-oscuro-color);
+    text-decoration:underline;
+    transition: all .6s all ease;
+}
+a:hover {
+    opacity: .75;
+}
+
+h1 {
+    font-size: 2rem;
+    font-family: var(--font-home);
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-family: var(--font-h);
+    color: var(--gold-color);
+
+    padding: 1.75rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+section {
+    min-height: 100vh;
+}
+
+
+/*----------- Componentes ------------*/
+.btn{
+    cursor: pointer;
+
+    font-size: 14px;
+    font-family: var(--font-lato);
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--white-color);
+
+    /* width: 100%; */
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 5px;
+    background-color: var(--gold-color);
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.25); /* esto en realidad esta mal, tenemos que hacerlo con variable */
+    
+}
+.btn-transparent{
+    background-color: transparent;
+    color: var(--gold-color);
+    border: 1px solid var(--gold-color);
+}
+
+
+
+/*----------- Utilities ------------*/
+
+/* aca crear la sombra */
+
+/* box-shadow: 1px 3px 10px 1px rgba(180, 180, 180, 0.75); */
+
