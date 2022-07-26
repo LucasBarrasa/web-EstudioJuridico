@@ -17,7 +17,7 @@
     --font-lato: 'Lato', sans-serif;
 }
 /*----------- Reset ------------*/
-html {
+html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -45,6 +45,10 @@ h1 {
     font-size: 2rem;
     font-family: var(--font-home);
     text-align: center;
+    line-height: 42px;
+    letter-spacing: 10%;
+    font-weight:100;
+    /* agregar sombra */
 }
 
 h2 {
@@ -90,7 +94,31 @@ section {
     border: 1px solid var(--gold-color);
 }
 
+.home {
+    background-image: url(../assets/home-bg.png);
+    background-size: cover;
 
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    align-items: center;
+}
+.home-text {
+    width: 100%;
+    margin-top: 115px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home h1 {
+    width: 50%;
+    color: var(--white-color);
+}
+.home span {
+    color: var(--white-color);
+    font-family: var(--font-lato);
+    font-size: 1rem;
+}
 
 /*----------- Utilities ------------*/
 
