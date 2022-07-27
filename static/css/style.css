@@ -22,8 +22,9 @@ html, body {
     padding: 0;
     box-sizing: border-box;
 
-    font-family: var(--font);
+    font-family: var(--font-lato);
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -53,7 +54,7 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
-    font-family: var(--font-h);
+    font-family: var(--font-raleway);
     color: var(--gold-color);
 
     padding: 1.75rem;
@@ -94,7 +95,9 @@ section {
     border: 1px solid var(--gold-color);
 }
 
-.home {
+.hero-image {
+    min-height: 100vh;
+
     background-image: url(../assets/home-bg.png);
     background-size: cover;
 
@@ -103,23 +106,40 @@ section {
     gap: 70px;
     align-items: center;
 }
-.home-text {
+.hero-image .home-text {
     width: 100%;
     margin-top: 115px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.home h1 {
+.hero-image h1 {
     width: 50%;
     color: var(--white-color);
 }
-.home span {
+.hero-image span {
     color: var(--white-color);
     font-family: var(--font-lato);
     font-size: 1rem;
 }
 
+
+.text {
+    margin: 0 2rem;
+
+    font-family: var(--font-lato);
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--dark-color-75);
+    text-align: justify;
+}
+
+footer {
+    padding:22px;
+    text-align: center;
+    color: white;
+    background-color: var(--dark-color);
+}
 /*----------- Utilities ------------*/
 
 /* aca crear la sombra */
