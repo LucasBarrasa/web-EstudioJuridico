@@ -17,7 +17,7 @@
     --font-lato: 'Lato', sans-serif;
 
     /* Altura para el header y panel de navegacion mobile*/
-    --header-height: 5rem;
+    --header-height: 4.5rem;
 
 }
 /*----------- Reset ------------*/
@@ -72,9 +72,6 @@ section {
 
 
 /*----------- Componentes ------------*/
-/* .menu{
-    display: none;
-} */
 
 
 
@@ -91,11 +88,13 @@ section {
     width: 100%;
     height: var(--header-height);
     
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 999;
 
     background-color: var(--dark-color);
+
+    box-shadow: 0 1px 10px 1px var(--dark-color-50);
 }
 
 .header__container{
@@ -109,13 +108,39 @@ section {
     align-items: center;
 }
 
+
+/* ---------  Logo ------------- */
+.logo{
+    display: flex;
+    align-items: center;
+}
+/* Logo en imagen */
 .logo img{
-    height: 3.25rem;
+    height: calc((var(--header-height))/1.5);
+    padding: 0 0 0 1.5rem;
+}
+/* enlace  */
+.logo a{
+    display: none;
+    text-decoration: none;
+    color: var(--white-color);
+}
+.logo a:hover{
+    cursor: pointer;
+    color: var(--gold-color);
+
+    transform: scale(1.05);
+}
+/* Texto */
+.logo a h1{
+    padding: 0 0 0 2rem;
+    font-size: 1.10rem;
 }
 
 
-/* - burger btn -*/
 
+/* ----------  Menu Mobile --------------------------- */
+/* - burger btn -*/
 .menu-btn{
     background-color: var(--dark-color);
     border: none;
@@ -127,7 +152,7 @@ section {
     width: 3rem;
     height: 3rem;
 }
-
+/* Panel de navegacion */
 .menu{
     position: fixed;
     
@@ -147,7 +172,6 @@ section {
 .menu.is-active{
     transform: translate(0);
 }
-
 
 /* Enlaces */
 .menu a{
@@ -174,9 +198,14 @@ section {
     width: 2rem;
 }
 
-.none{ /* desactivador arrow y burger icon*/
+
+.none{ /* desactivador para desaparecer elementos*/
     display: none;
 }
+
+
+
+/* --------- MediaQuerys ----------------------------- */
 
 /* tablet */
 @media screen and (min-width:768px) {
@@ -185,23 +214,63 @@ section {
 
 /* Desktop */
 @media screen and (min-width:1024px) {
-    .header{
-        position: sticky;
-        top: 0;
+    .logo a{
+        display: flex;
     }
+
+
     .menu-btn{
         display: none;
     }
     .menu{
-        position: static;
-        transform: translate(0);
-        flex-direction: row;
+        width: 70%;
+        position: sticky;
+    
+        box-sizing: content-box;
         height: var(--header-height);
+
+
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        
         background-color: var(--dark-color);
+
+        transform: translate(0);
     }
+
     .menu a{
-        padding: 0;
+        display: flex;
+        align-items: center;
+        
+        font-size: 1.25rem;
+        padding: 0 1.5rem 0 1.5rem;
+        box-sizing: border-box;
+        
+        
+        text-decoration: none;
+        color: var(--white-color);
     }
+    .menu a:hover{
+        cursor: pointer;
+        color: var(--gold-color);
+        background-color: var(--dark-color);
+    
+        border-bottom: 2px solid var(--gold-color);
+        transform: scale(1.05);
+    }
+    /* Texto */
+    .menu a p{
+        padding: 0 0 0 0rem;
+        font-size: 1.10rem;
+    }
+    /* Iconos */
+    .menu a img{
+        /* width: 2rem; */
+        display: none;
+    }
+
+
     
 }
 
