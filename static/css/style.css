@@ -15,6 +15,10 @@
     --font-times:'Times New Roman', Times, serif;
     --font-raleway: 'Raleway', sans-serif;
     --font-lato: 'Lato', sans-serif;
+
+    /* Altura para el header y panel de navegacion mobile*/
+    --header-height: 4.5rem;
+
 }
 /*----------- Reset ------------*/
 html, body {
@@ -31,6 +35,9 @@ html, body {
 *::after,
 *::before {
     box-sizing: inherit;
+}
+body{
+    margin: 0;
 }
 
 a {
@@ -70,6 +77,23 @@ section {
 
 
 /*----------- Componentes ------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .btn{
     cursor: pointer;
 
@@ -94,7 +118,6 @@ section {
     color: var(--gold-color);
     border: 1px solid var(--gold-color);
 }
-
 .hero-image {
     min-height: 100vh;
 
@@ -145,4 +168,197 @@ footer {
 /* aca crear la sombra */
 
 /* box-shadow: 1px 3px 10px 1px rgba(180, 180, 180, 0.75); */
+
+
+/* ---------->  Nav bar  &  Header  <---------- */
+.header{
+    width: 100%;
+    height: var(--header-height);
+    
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    background-color: var(--dark-color);
+
+    box-shadow: 0 1px 10px 1px var(--dark-color-50);
+}
+
+.header__container{
+    width: 100%;
+    height: 100%;
+
+    padding: 0px 20px 0px 20px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* ---------  Logo ------------- */
+.logo{
+    display: flex;
+    align-items: center;
+}
+/* Logo en imagen */
+.logo img{
+    height: calc((var(--header-height))/1.5);
+    padding: 0 0 0 1.5rem;
+}
+/* enlace  */
+.logo a{
+    display: none;
+    text-decoration: none;
+    color: var(--white-color);
+}
+.logo a:hover{
+    cursor: pointer;
+    color: var(--gold-color);
+
+    transform: scale(1.05);
+}
+/* Texto */
+.logo a h1{
+    padding: 0 0 0 2rem;
+    font-size: 1.10rem;
+}
+
+
+
+/* ----------  Menu Mobile --------------------------- */
+/* - burger btn -*/
+.menu-btn{
+    background-color: var(--dark-color);
+    border: none;
+    cursor: pointer;
+    color: var(--gold-oscuro-color);
+}
+
+.menu-btn img{
+    width: 3rem;
+    height: 3rem;
+}
+/* Panel de navegacion */
+.menu{
+    position: fixed;
+    
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: var(--header-height);
+    
+    display: flex;
+    flex-direction: column;
+    
+    background-color: var(--dark-color-75);
+
+    transition: transform 0.3s ease;
+    transform: translate(-100%);
+}
+.menu.is-active{
+    transform: translate(0);
+}
+
+/* Enlaces */
+.menu a{
+    text-decoration: none;
+
+    padding: 0 0 0 4rem;
+
+    display: flex;
+    align-items: center;
+}
+.menu a:hover{
+    background-color: var(--gold-color);
+    color: var(--dark-color);
+    
+}
+
+/* Texto */
+.menu a p{
+    padding: 0 0 0 4rem;
+    font-size: 2rem;
+}
+/* Iconos */
+.menu a img{
+    width: 2rem;
+}
+
+
+.none{ /* desactivador para desaparecer elementos*/
+    display: none;
+}
+
+
+
+/* --------- MediaQuerys ----------------------------- */
+
+/* tablet */
+@media screen and (min-width:768px) {
+    
+}
+
+/* Desktop */
+@media screen and (min-width:1024px) {
+    .logo a{
+        display: flex;
+    }
+
+
+    .menu-btn{
+        display: none;
+    }
+    .menu{
+        width: 70%;
+        position: sticky;
+    
+        box-sizing: content-box;
+        height: var(--header-height);
+
+
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        
+        background-color: var(--dark-color);
+
+        transform: translate(0);
+    }
+
+    .menu a{
+        display: flex;
+        align-items: center;
+        
+        font-size: 1.25rem;
+        padding: 0 1.5rem 0 1.5rem;
+        box-sizing: border-box;
+        
+        
+        text-decoration: none;
+        color: var(--white-color);
+    }
+    .menu a:hover{
+        cursor: pointer;
+        color: var(--gold-color);
+        background-color: var(--dark-color);
+    
+        border-bottom: 2px solid var(--gold-color);
+        transform: scale(1.05);
+    }
+    /* Texto */
+    .menu a p{
+        padding: 0 0 0 0rem;
+        font-size: 1.10rem;
+    }
+    /* Iconos */
+    .menu a img{
+        /* width: 2rem; */
+        display: none;
+    }
+
+
+    
+}
+
 
